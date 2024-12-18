@@ -1,42 +1,18 @@
 <div class="row">
-    <div class="col-3">
-        <p>{{firstName}}</p>
-
-    </div>
-    <div class="col-3">
-        <p>{{currentDate}}</p>
-
-    </div>
-    <div class="col-3">
-        <p>{{selectedState}}</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-3">
-        <input type="text" class="form-control" [value]="firstName"/>
-    </div>
-    <div class="col-3">
-        <input type="text" [(ngModel)]="firstName"/>
-    </div>
-    <div class="col-3">
-        <input [type] ="inputType"/>
-    </div>
-    <div class="col-3">
-        <select [(ngModel)]="selectedState" >
-            <option value="MH">Maharashtra</option>
-            <option value="MP">Madhya Pradesh</option>
-            <option value="Goa">Goa</option>
-        </select>
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            <button class="btn btn-success" (click)="showWelcomeAlert()">Show Alert</button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-success" (click)="showMessage('Welcome')" >Show Message</button>
-        </div>
-
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr. No</th>
+                    <th>Role Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let role of roleList; let srno = index">
+                    <td>{{srno+1}}</td>
+                    <td>{{role.role}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
